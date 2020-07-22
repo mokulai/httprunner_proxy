@@ -1,0 +1,12 @@
+
+config:
+    name: "demo testsuite"
+    variables:
+        device_sn: "XYZ"
+    base_url: "http://127.0.0.1:5000"
+
+testcases:
+    demo:
+        testcase: testcases/demo_testcase.yml
+        parameters:
+            id: '10001'

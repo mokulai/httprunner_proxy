@@ -1,0 +1,9 @@
+config:
+    name: "testsuite"
+    variables:
+        info: ""
+    base_url: ${ENV(TEST_HOST)}
+
+testcases:
+    {{name}} api testcase:
+        testcase: testcases/singleinterface/{{name}}_testcase.yml

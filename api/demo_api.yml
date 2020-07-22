@@ -1,0 +1,12 @@
+name: demo api
+variables:
+    id: $id
+request:
+    url: /api/news
+    method: GET
+    headers:
+        Content-Type: "application/json"
+    params:
+        id: $id
+validate:
+    - eq: ["status_code", 200]

@@ -1,0 +1,14 @@
+name: {{name}}
+variables:
+    {{variables}}
+request:
+    url: {{url}}
+    method: {{method}}
+    headers:
+        {{#headers}}
+        {{key}}: "{{value}}"
+        {{/headers}}
+    json:
+        {{{request}}}
+validate:
+    - eq: ["status_code", 200]

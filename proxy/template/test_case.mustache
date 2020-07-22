@@ -1,0 +1,11 @@
+config:
+    name: "testcase"
+    variables:
+        info: ""
+    base_url: ${ENV(TEST_HOST)}
+
+teststeps:
+ -  name: {{name}}
+    api: api/{{name}}_api.yml
+    variables:
+        {{{variables}}}

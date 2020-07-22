@@ -1,0 +1,16 @@
+config:
+    name: "testcase"
+    base_url: ${ENV(TEST_HOST)}
+    setup_hooks:
+        - ${demo()}
+    teardown_hooks:
+        - ${demo()}
+
+teststeps:
+ -  name: {{name}}
+    api: api/{{name}}_api.yml
+    variables:
+        {{{process}}}
+    validate:
+        {{{validate}}}
+

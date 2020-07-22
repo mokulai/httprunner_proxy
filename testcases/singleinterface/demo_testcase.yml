@@ -1,0 +1,22 @@
+config:
+    name: "demo testcase"
+    variables:
+        device_sn: "ABC"
+    base_url: ${ENV(TEST_HOST)}
+
+teststeps:
+ -  name: demo step 1
+    api: api/demo_api.yml
+    variables:
+        id: $id
+    extract:
+        - content: body.context
+    teardown_hooks:
+        - ${demo($response,$id)}
+
+ -  name: demo step 2
+    api: api/demo_api.yml
+    variables:
+        id: $content
+    teardown_hooks:
+        - ${demo($response,$id)}
